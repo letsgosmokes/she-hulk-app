@@ -87,6 +87,33 @@ input[type="text"] {
     color: orange;
 }
 
+/* Add this to your existing index.css */
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 0.5rem;
+    position: absolute;
+    width: calc(100% - 2rem);
+    /* Adjust based on your input padding */
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.suggestions-list li {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #555;
+}
+
+
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 600px) {
@@ -114,5 +141,9 @@ input[type="text"] {
     .movie-card img {
         width: 100%;
         height: auto;
+    }
+
+    .movie-meta {
+        flex-direction: column;
     }
 }
