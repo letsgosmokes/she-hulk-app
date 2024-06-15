@@ -1,6 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MovieContext } from '../context/MovieContext';
+import { fallbackImgUrl } from '../utils/constants';
+import { handleImageError } from '../utils/utilFn';
 
 function MovieList() {
     const { movies, searchTerm, setSearchTerm, suggestions } = useContext(MovieContext);
@@ -51,7 +53,7 @@ function MovieList() {
                 {filteredMovies.map(movie => (
                     <div key={movie.imdbID} className="movie-card">
                         <Link to={`/movie/${movie.imdbID}`}>
-                            <img src={movie.Poster} alt={movie.Title} />
+                            <img src={movie.Poster || fallbackImgUrl} alt={movie.Title} onError={handleImageError} />
                             <p>{movie.Title}</p>
                         </Link>
                     </div>

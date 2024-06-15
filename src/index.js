@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { MovieProvider } from './context/MovieContext';
-import "../src/assets/movie.css"
+import "../src/assets/styles/movie.css";
 
 ReactDOM.render(
   <React.StrictMode>
