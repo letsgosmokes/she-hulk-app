@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { fallbackImgUrl } from '../utils/constants';
+import { handleImageError } from '../utils/utilFn';
 
 function MovieDetail() {
     const { id } = useParams();
@@ -20,7 +22,9 @@ function MovieDetail() {
 
     return (
         <div className='movie-detail'>
-            <div className='movie-poster'><img src={movie.Poster} alt={movie.Title} /></div>
+            <div className='movie-poster'>
+                <img src={movie.Poster || fallbackImgUrl} alt={movie.Title} onError={handleImageError} />
+            </div>
             <h2>{movie.Title} ({movie.Year})</h2>
             <div className='movie-meta'>
                 <p><strong>Genre:</strong><br /> {movie.Genre}</p>
