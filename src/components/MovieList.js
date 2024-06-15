@@ -10,12 +10,12 @@ function MovieList() {
     const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
     useEffect(() => {
-        // Update debounced search term after 10000ms (10 seconds)
+        // Update debounced search term after 1 sec
         const timer = setTimeout(() => {
             setDebouncedSearchTerm(searchTerm);
         }, 1000);
 
-        // Cleanup function to clear the timer if searchTerm changes before 10000ms
+        // Cleanup function to clear the timer if searchTerm changes before 1 sec
         return () => clearTimeout(timer);
     }, [searchTerm]);
 
