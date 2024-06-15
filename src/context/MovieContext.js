@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import { fetchMovies } from '../service/movies';
 
 export const MovieContext = createContext();
 
@@ -9,17 +9,19 @@ export const MovieProvider = ({ children }) => {
     const [suggestions, setSuggestions] = useState([]);
     const [page, setPage] = useState(1);
 
-    const fetchMovies = async () => {
+    const getMovies = async () => {
         try {
-            const response = await axios.get(`https://www.omdbapi.com/?apikey=b9bd48a6&s=drive&page=${page}`);
-            setMovies(prev => [...prev, ...response.data.Search]); // append new data after scrolling
+            const newMovies = await fetchMovies(page);
+            if (newMovies) {
+                setMovies(prev => [...prev, ...newMovies]); // append new data after scrolling
+            }
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
 
     useEffect(() => {
-        fetchMovies(); // call api when page changes
+        getMovies(); // call api when page changes
     }, [page]);
 
     useEffect(() => {

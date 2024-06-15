@@ -28,12 +28,12 @@ function MovieList() {
 
     const handleSearchChange = (e) => {
         const { value } = e.target;
-        setSearchTerm(value); // Update searchTerm immediately
+        setSearchTerm(value);
     };
 
     const handleSuggestionClick = (title) => {
         setSearchTerm(title);
-        setDebouncedSearchTerm(title); // Update debouncedSearchTerm immediately
+        setDebouncedSearchTerm(title); // Update debouncedSearchTerm
         setFilteredMovies(movies.filter(movie =>
             movie.Title.toLowerCase() === title.toLowerCase()
         ));

@@ -1,21 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import { fallbackImgUrl } from '../utils/constants';
 import { handleImageError } from '../utils/utilFn';
 import Loader from './Loader';
+import { fetchMovieDetails } from '../service/movies';
 
 function MovieDetail() {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
 
+    const getDetailsOfMovie = async () => {
+        try {
+            const movieDetails = await fetchMovieDetails(id);
+            if (movieDetails) {
+                setMovie(movieDetails); // append new data after scrolling
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
     useEffect(() => {
-        axios.get(`https://www.omdbapi.com/?apikey=b9bd48a6&i=${id}`)
-            .then(response => {
-                setMovie(response.data);
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    }, [id]);
+        getDetailsOfMovie();
+    }, []);
 
     if (!movie) {
         return <Loader />;
