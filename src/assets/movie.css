@@ -71,6 +71,23 @@ input[type="text"] {
     border-radius: 0.5rem;
 }
 
+
+.movie-poster {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-meta {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.orange {
+    color: orange;
+}
+
+
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 600px) {
     header {
