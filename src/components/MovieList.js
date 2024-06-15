@@ -7,23 +7,33 @@ import { handleImageError } from '../utils/utilFn';
 function MovieList() {
     const { movies, searchTerm, setSearchTerm, suggestions } = useContext(MovieContext);
     const [filteredMovies, setFilteredMovies] = useState([]);
+    const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
     useEffect(() => {
-        // Update filteredMovies when movies or searchTerm change
+        // Update debounced search term after 10000ms (10 seconds)
+        const timer = setTimeout(() => {
+            setDebouncedSearchTerm(searchTerm);
+        }, 1000);
+
+        // Cleanup function to clear the timer if searchTerm changes before 10000ms
+        return () => clearTimeout(timer);
+    }, [searchTerm]);
+
+    useEffect(() => {
+        // Filter movies based on debouncedSearchTerm
         setFilteredMovies(movies.filter(movie =>
-          movie.Title.toLowerCase().includes(searchTerm.toLowerCase())
+            movie.Title.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
         ));
-      }, [movies, searchTerm]);
+    }, [movies, debouncedSearchTerm]);
 
     const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value);
-        setFilteredMovies(movies.filter(movie =>
-            movie.Title.toLowerCase().includes(e.target.value.toLowerCase())
-        ));
+        const { value } = e.target;
+        setSearchTerm(value); // Update searchTerm immediately
     };
 
     const handleSuggestionClick = (title) => {
         setSearchTerm(title);
+        setDebouncedSearchTerm(title); // Update debouncedSearchTerm immediately
         setFilteredMovies(movies.filter(movie =>
             movie.Title.toLowerCase() === title.toLowerCase()
         ));
