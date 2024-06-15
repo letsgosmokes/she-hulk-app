@@ -6,7 +6,7 @@ function Header() {
         <header>
             <nav>
                 <ul>
-                    <li><Link to="/">Movie List</Link></li>
+                    <li><h2>Movie List</h2></li>
                     <li><Link to="/">Home</Link></li>
                 </ul>
             </nav>
