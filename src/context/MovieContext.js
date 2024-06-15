@@ -21,7 +21,9 @@ export const MovieProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        getMovies(); // call api when page changes
+        if(!searchTerm || !suggestions) {
+            getMovies(); // call api when page changes
+        }
     }, [page]);
 
     useEffect(() => {
