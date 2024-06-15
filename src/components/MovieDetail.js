@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { fallbackImgUrl } from '../utils/constants';
 import { handleImageError } from '../utils/utilFn';
+import Loader from './Loader';
 
 function MovieDetail() {
     const { id } = useParams();
@@ -17,7 +18,7 @@ function MovieDetail() {
     }, [id]);
 
     if (!movie) {
-        return <div>Loading...</div>;
+        return <Loader />;
     }
 
     return (
