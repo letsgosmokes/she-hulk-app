@@ -36,14 +36,14 @@ function MovieDetail() {
             <div className='movie-poster'>
                 <img src={movie.Poster || fallbackImgUrl} alt={movie.Title} onError={handleImageError} />
             </div>
-            <h2>{movie.Title} ({movie.Year})</h2>
+            <h2 className='orange'>{movie.Title} ({movie.Year})</h2>
             <div className='movie-meta'>
-                <p><strong>Genre:</strong><br /> {movie.Genre}</p>
-                <p><strong>Running Time:</strong><br />  {movie.Runtime}</p>
-                <p><strong>Rating:</strong><br />  {movie.imdbRating}/10</p>
+                <p><span className='orange'><strong>Genre:</strong></span><br /> {movie.Genre}</p>
+                <p><span className='orange'><strong>Running Time:</strong></span><br />  {movie.Runtime}</p>
+                <p><span className='orange'><strong>Rating:</strong></span><br />  {movie.imdbRating}/10</p>
             </div>
-            <p><strong>Plot:</strong><br />  {movie.Plot}</p>
-            <p><strong>Actors:</strong><br /> {movie.Actors}</p>
+            <p><span className='orange'><strong>Plot:</strong></span><br />  {movie.Plot}</p>
+            <p><span className='orange'><strong>Actors:</strong></span><br /> {movie.Actors}</p>
         </div>
     );
 }
