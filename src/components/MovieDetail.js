@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fallbackImgUrl } from '../utils/constants';
 import { handleImageError } from '../utils/utilFn';
 import Loader from './Loader';
 import { fetchMovieDetails } from '../service/movies';
+import { MovieContext } from '../context/MovieContext';
 
 function MovieDetail() {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
+    const { setSearchTerm } = useContext(MovieContext);
 
     const getDetailsOfMovie = async () => {
         try {
@@ -22,6 +24,7 @@ function MovieDetail() {
 
     useEffect(() => {
         getDetailsOfMovie();
+        setSearchTerm("");
     }, []);
 
     if (!movie) {
