@@ -17,10 +17,16 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul li {
-    margin-right: 1rem;
+nav ul li:nth-child(1) {
+    color: orange;
+}
+
+nav ul li:nth-child(2) {
+    text-decoration: underline;
 }
 
 a {
@@ -64,6 +70,23 @@ input[type="text"] {
     border: 1px solid #333;
     border-radius: 0.5rem;
 }
+
+
+.movie-poster {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-meta {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.orange {
+    color: orange;
+}
+
 
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 600px) {
