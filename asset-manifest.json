@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.664b277f.css",
-    "main.js": "/static/js/main.55a96a80.js",
-    "static/js/421.86d688f5.chunk.js": "/static/js/421.86d688f5.chunk.js",
-    "static/js/984.41aec4b3.chunk.js": "/static/js/984.41aec4b3.chunk.js",
-    "static/js/445.c52a4cf6.chunk.js": "/static/js/445.c52a4cf6.chunk.js",
-    "index.html": "/index.html",
-    "main.664b277f.css.map": "/static/css/main.664b277f.css.map",
-    "main.55a96a80.js.map": "/static/js/main.55a96a80.js.map",
-    "421.86d688f5.chunk.js.map": "/static/js/421.86d688f5.chunk.js.map",
-    "984.41aec4b3.chunk.js.map": "/static/js/984.41aec4b3.chunk.js.map",
-    "445.c52a4cf6.chunk.js.map": "/static/js/445.c52a4cf6.chunk.js.map"
+    "main.css": "/she-hulk-app/static/css/main.c1e84d84.css",
+    "main.js": "/she-hulk-app/static/js/main.eacfd72b.js",
+    "static/js/421.86d688f5.chunk.js": "/she-hulk-app/static/js/421.86d688f5.chunk.js",
+    "static/js/984.41aec4b3.chunk.js": "/she-hulk-app/static/js/984.41aec4b3.chunk.js",
+    "static/js/445.c52a4cf6.chunk.js": "/she-hulk-app/static/js/445.c52a4cf6.chunk.js",
+    "index.html": "/she-hulk-app/index.html",
+    "main.c1e84d84.css.map": "/she-hulk-app/static/css/main.c1e84d84.css.map",
+    "main.eacfd72b.js.map": "/she-hulk-app/static/js/main.eacfd72b.js.map",
+    "421.86d688f5.chunk.js.map": "/she-hulk-app/static/js/421.86d688f5.chunk.js.map",
+    "984.41aec4b3.chunk.js.map": "/she-hulk-app/static/js/984.41aec4b3.chunk.js.map",
+    "445.c52a4cf6.chunk.js.map": "/she-hulk-app/static/js/445.c52a4cf6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.664b277f.css",
-    "static/js/main.55a96a80.js"
+    "static/css/main.c1e84d84.css",
+    "static/js/main.eacfd72b.js"
   ]
 }
